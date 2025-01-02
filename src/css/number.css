@@ -1,0 +1,14 @@
+.number {
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  /* font-weight: bold; */
+  color: rgba(0, 0, 0, 0.84);
+  box-sizing: border-box;
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  white-space: nowrap;
+  height: 19.5938px;
+  border-bottom: 0.5px solid black;
+}

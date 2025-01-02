@@ -1,0 +1,22 @@
+.line {
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  white-space: pre;
+  word-wrap: normal;
+  -webkit-user-modify: read-write-plaintext-only;
+  tab-size: 4;
+  display: block;
+  padding: 0 2px 0 6px;
+  outline: none;
+  background-color: #e6f4f3;
+  /* background-color: #f2f3f7; */
+  /* caret-color: transparent !important; */
+}
+.line-active {
+  background-color: #dadbdfb4;
+  /* background-color: #8ad4cb5d; */
+}
+.line-selected {
+  background-color: #a0d6d1;
+}

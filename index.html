@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor MVC</title>
+    <link rel="stylesheet" href="src/css/editor.css" />
+    <link rel="stylesheet" href="src/css/lines.css" />
+    <link rel="stylesheet" href="src/css/main.css" />
+    <link rel="stylesheet" href="src/css/number.css" />
+    <link rel="stylesheet" href="src/css/toolbar.css" />
+    <link rel="stylesheet" href="src/css/docs.css" />
+    <link rel="stylesheet" href="src/css/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">Markdown Editor</div>
+      <div class="navbar-docs-hint">
+        <div>
+          <span>Press <code>Ctrl + Y</code> to open toolbar.</span>
+        </div>
+        <div>
+          <span>Press <code>Ctrl + M</code> to open documents.</span>
+        </div>
+      </div>
+    </nav>
+    <main class="editor">
+      <div class="editor-container">
+        <div class="editor-number-row"></div>
+        <div class="editor-editable-area"></div>
+      </div>
+    </main>
+
+    <div class="side-navbar hidden docs">
+      <div class="docs-insights">
+        <h1>Instructions:</h1>
+        <h3 class="insight">
+          Navigate using <code>Arrow Keys</code>:
+          <span class="key">↑ Up Arrow</span> /
+          <span class="key">↓ Down Arrow</span>
+        </h3>
+        <h3 class="insight">
+          <code>Backspace</code>: Removes a word and moves to the previous line
+          if the current line is empty.
+        </h3>
+        <h3 class="insight">
+          <code>Ctrl + Enter</code>: Inserts a new line below the cursor.
+        </h3>
+        <h3 class="insight">
+          <code>Ctrl + B</code>: Deletes the current line.
+        </h3>
+        <h3 class="insight">Automatically adds new lines at the bottom.</h3>
+        <h3 class="insight">
+          Supports <code>Add</code> and <code>Delete</code> buttons.
+        </h3>
+      </div>
+    </div>
+
+    <div class="side-navbar hiddenT side-navbar-toolbar tools">
+      <div class="docs-insights">
+        <h2>Tools:</h2>
+        <div>
+          <span>Line:</span>
+          <button id="addLine">Add</button>
+          <button id="deleteLine">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+    <script>
+      document.addEventListener("keydown", function (e) {
+        let key = e.code;
+        if (!["KeyM", "KeyY"].includes(key)) return;
+        if (e.ctrlKey && e.code === "KeyM") {
+          document.querySelector(".docs").classList.toggle("hidden");
+          document.querySelector(".tools").classList.add("hiddenT");
+        }
+        if (e.ctrlKey && e.code === "KeyY") {
+          document.querySelector(".tools").classList.toggle("hiddenT");
+          document.querySelector(".docs").classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
